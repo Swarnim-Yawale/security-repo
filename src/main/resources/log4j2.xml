@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+
+<Properties>
+
+<Property name="LOG_PATTERN">
+%d{yyyy-MM-dd HH:mm:ss} %-5level
+[%t] %c{1} - %msg%n
+</Property>
+
+<Property name="LOG_FILE">
+logs/logging-security-demo.log
+</Property>
+
+</Properties>
+
+<Appenders>
+
+<Console name="Console"
+target="SYSTEM_OUT">
+
+<PatternLayout
+pattern="${LOG_PATTERN}"/>
+
+</Console>
+
+<File name="FileLogger"
+fileName="${LOG_FILE}">
+
+<PatternLayout
+pattern="${LOG_PATTERN}"/>
+
+</File>
+
+</Appenders>
+
+<Loggers>
+
+<Logger
+name="com.example.demo"
+level="debug"
+additivity="false">
+
+<AppenderRef ref="Console"/>
+<AppenderRef ref="FileLogger"/>
+
+</Logger>
+
+<Root level="info">
+
+<AppenderRef ref="Console"/>
+<AppenderRef ref="FileLogger"/>
+
+</Root>
+
+</Loggers>
+
+</Configuration> 
