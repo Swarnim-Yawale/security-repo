@@ -86,7 +86,7 @@ jobs:
           import xml.etree.ElementTree as ET
 
           report = "target/site/jacoco/jacoco.xml"
-          required_coverage = 20.0
+          required_coverage = 80.0
 
           try:
               root = ET.parse(report).getroot()
